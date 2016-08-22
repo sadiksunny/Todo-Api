@@ -36,14 +36,14 @@ sequelize.sync({
 	
 	}).then(function (todo){
 		return Todo.create ({
-			description: 'Clean office'
+			description: 'Clean Office'
 		});
 	}).then (function () {
 		 // return Todo.findById(1)
 		return Todo.findAll({
 			where :{
 			description: {
-					$like : '%Office%'
+					$like : '%clean%'
 				}
 			}
 		});
