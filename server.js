@@ -11,7 +11,7 @@ var todoNextId = 1;
 app.use (bodyParser.json());
 
 app.get ('/' , function (req ,res){
-	res.send ('Todo send API Root');
+	 res.send ('Todo send API Root');
 });
 
 //GET /todos
@@ -34,18 +34,19 @@ app.get('/todos' , function(req , res ){
 });
 
 //GET /todos/:id
-app.get ('/todos/:id' , function (req , res){
-	var todoId = parseInt(req.params.id , 10) ;
-	
-	db.todo.findById(todoId).then(function (todo){
-		if (!!todo){
+app.get('/todos/:id', function(req, res) {
+	var todoId = parseInt(req.params.id, 10);
+
+	db.todo.findById(todoId).then(function (todo) {
+		if (!!todo) {
 			res.json(todo.toJSON());
-		}else {
+		} else {
 			res.status(404).send();
 		}
-	} , function (e){
+	}, function (e) {
 		res.status(500).send();
 	});
+});
 	 // var matchedTodo = _.findWhere(todos, {id: todoId});
 	// todos.forEach (function (todo){
 		// if (todoId === todo.id){
