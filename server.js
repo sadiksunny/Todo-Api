@@ -10,8 +10,13 @@ var todoNextId = 1;
 
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
 app.get('/', function(req, res) {
   res.send('Todo send API Root');
+=======
+app.get ('/' , function (req ,res){
+	 res.send ('Todo send API Root');
+>>>>>>> 6c14ce2487b5abbeadf1d3acc8b87fee8c306e9b
 });
 
 //GET /todos
@@ -39,6 +44,7 @@ app.get('/todos', function(req, res) {
 
 //GET /todos/:id
 app.get('/todos/:id', function(req, res) {
+<<<<<<< HEAD
   var todoId = parseInt(req.params.id, 10);
 
   db.todo.findById(todoId).then(function(todo) {
@@ -50,6 +56,33 @@ app.get('/todos/:id', function(req, res) {
   }, function(e) {
     res.status(500).send();
   });
+=======
+	var todoId = parseInt(req.params.id, 10);
+
+	db.todo.findById(todoId).then(function (todo) {
+		if (!!todo) {
+			res.json(todo.toJSON());
+		} else {
+			res.status(404).send();
+		}
+	}, function (e) {
+		res.status(500).send();
+	});
+});
+	 // var matchedTodo = _.findWhere(todos, {id: todoId});
+	// todos.forEach (function (todo){
+		// if (todoId === todo.id){
+			// matchedTodo = todo;
+			// return todo;
+		// }
+	// });
+	// if (matchedTodo){
+		// res.json (matchedTodo);
+	// }else {
+		// res.status(404).send();
+	// }
+	
+>>>>>>> 6c14ce2487b5abbeadf1d3acc8b87fee8c306e9b
 });
 
 //POST /todos/:id
