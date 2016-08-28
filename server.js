@@ -16,7 +16,10 @@ app.get('/', function(req, res) {
 
 app.get ('/' , function (req ,res){
 	 res.send ('Todo send API Root');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6c14ce2487b5abbeadf1d3acc8b87fee8c306e9b
 });
 
 //GET /todos
@@ -44,6 +47,7 @@ app.get('/todos', function(req, res) {
 
 //GET /todos/:id
 app.get('/todos/:id', function(req, res) {
+<<<<<<< HEAD
 
   var todoId = parseInt(req.params.id, 10);
 
@@ -57,6 +61,8 @@ app.get('/todos/:id', function(req, res) {
     res.status(500).send();
   });
 
+=======
+>>>>>>> 6c14ce2487b5abbeadf1d3acc8b87fee8c306e9b
 	var todoId = parseInt(req.params.id, 10);
 
 	db.todo.findById(todoId).then(function (todo) {
